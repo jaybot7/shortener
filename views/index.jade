@@ -1,5 +1,42 @@
-extends layout
-
-block content
-  h1= title
-  p Welcome to #{title}
+html
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title URL Shortener
+    link(href='https://fonts.googleapis.com/css?family=Raleway', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    link(href='styles.css', rel='stylesheet')
+  body
+    .site-wrapper
+      .site-wrapper-inner
+        .main-container
+          .inner.cover
+            h1 Jaybot7 API Basejump:
+            h4 URL Shortener Microservice
+            .row
+        .container-fluid.text-center.img-circle(style='background-color:olive')
+          h2  User stories: 
+          p2
+            ul
+              li
+                | I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+              li When I visit that shortened URL, it will redirect me to my original link.
+          h2 Example creation usage:
+          p2
+            ul
+              li https://floating-waters-4449.herokuapp.com/new/https://www.google.com
+              li https://floating-waters-4449.herokuapp.com/new/http://foo.com:80
+          h2 Example creation output
+          p2
+            ul
+              li
+                | {"original_url":"http://google.com","short_url":"floating-waters-4449.herokuapp.com/B1QahPIV"}
+          h2 Usage:
+          ul
+            li
+              p1 https://floating-waters-4449.herokuapp.com/B1QahPIV
+            p3 Will redirect to: https://www.google.com/
+    script(src='https://code.jquery.com/jquery-2.1.4.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+    script(src='javascripts/shorten.js')
